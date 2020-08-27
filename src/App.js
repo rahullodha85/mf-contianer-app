@@ -106,7 +106,7 @@ const App = props => {
 
       <Switch>
         <Route path="/home" component={Home} />
-        <Route exact path="/app1" component={CreateReactApp} />
+        <Route exact path="/app1" component={CreateReactApp} />  //path here has to be exactly same as root path (with prefix) on micro frontend app
         {/* <Route path="/app1" render={() => <CreateReactApp />} /> */}
         <Route path="/createreactapp2" render={() => <CreateReactApp2 />} />
         <Route path="/createreactapp3" render={() => <CreateReactApp3 />} />
