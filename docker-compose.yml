@@ -1,0 +1,41 @@
+version: '3'
+services:
+  app-container:
+    container_name: app-container
+    ports:
+      - "80:80"
+    depends_on:
+      - mf-1
+#      - mf-2
+#      - mf-3
+    image: app-container
+    networks:
+      - my-net
+
+  mf-1:
+    container_name: mf-1
+    ports:
+      - "4000:80"
+    image: mf-1
+    networks:
+      - my-net
+
+#  mf-2:
+#    container_name: mf-2
+#    ports:
+#      - "4002:80"
+#    image: mf-2
+#    networks:
+#      - my-net
+#
+#  mf-3:
+#    container_name: mf-3
+#    ports:
+#      - "4003:80"
+#    image: mf-3
+#    networks:
+#      - my-net
+
+networks:
+  my-net:
+    driver: bridge
